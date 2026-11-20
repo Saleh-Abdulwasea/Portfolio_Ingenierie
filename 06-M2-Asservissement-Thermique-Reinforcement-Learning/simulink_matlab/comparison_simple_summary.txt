@@ -1,0 +1,8 @@
+RL vs PID (0..180s), SP=25.00°C
+RMSE (°C)        : RL=0.180 | PID=0.361
+IAE  (°C*s)      : RL=23.81  | PID=49.47
+Max |e| (°C)     : RL=0.797 | PID=1.393
+Mean PWM (%)     : RL=24.9 | PID=39.9
+Integral u^2 dt  : RL=12.37  | PID=31.57
+Time in ±0.2°C   : RL=80.5% | PID=50.5%
+Time in ±0.5°C   : RL=98.5% | PID=92.8%

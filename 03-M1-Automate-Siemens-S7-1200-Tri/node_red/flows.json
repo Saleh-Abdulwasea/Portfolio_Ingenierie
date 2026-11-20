@@ -1,0 +1,922 @@
+[
+    {
+        "id": "551e486cf1cf5f1b",
+        "type": "tab",
+        "label": "Flux 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "44a2063d10882cd0",
+        "type": "MySQLdatabase",
+        "name": "",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "tri_test",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "6cbe9d40df30041a",
+        "type": "s7 endpoint",
+        "transport": "iso-on-tcp",
+        "address": "192.168.0.1",
+        "port": "102",
+        "rack": "0",
+        "slot": "1",
+        "localtsaphi": "01",
+        "localtsaplo": "00",
+        "remotetsaphi": "01",
+        "remotetsaplo": "00",
+        "connmode": "rack-slot",
+        "adapter": "",
+        "busaddr": 2,
+        "cycletime": 1000,
+        "timeout": 2000,
+        "name": "",
+        "vartable": [
+            {
+                "addr": "M2.0",
+                "name": "capteur"
+            },
+            {
+                "addr": "M0.0",
+                "name": "start_tri"
+            },
+            {
+                "addr": "M0.5",
+                "name": "tri_en_cours"
+            },
+            {
+                "addr": "M3.0",
+                "name": "roue_triee"
+            }
+        ]
+    },
+    {
+        "id": "444f7f92a6177c67",
+        "type": "MySQLdatabase",
+        "name": "",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "tri_test",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "429dc2ded3696fcf",
+        "type": "ui_tab",
+        "name": "Historique",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "c2c1a1ecb2251b31",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "7cac9085f2249487",
+        "type": "ui_group",
+        "name": "graphe",
+        "tab": "429dc2ded3696fcf",
+        "order": 1,
+        "disp": true,
+        "width": "14",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6d0b8dfaee987ea8",
+        "type": "ui_tab",
+        "name": "base de donnée",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "d8aad10abd0fe0b7",
+        "type": "ui_group",
+        "name": "data base",
+        "tab": "6d0b8dfaee987ea8",
+        "order": 1,
+        "disp": true,
+        "width": "14",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "s7_endpoint",
+        "type": "s7 endpoint",
+        "transport": "iso-on-tcp",
+        "address": "192.168.0.10",
+        "port": "102",
+        "rack": "0",
+        "slot": "1",
+        "localtsaphi": "01",
+        "localtsaplo": "00",
+        "remotetsaphi": "01",
+        "remotetsaplo": "00",
+        "connmode": "rack-slot",
+        "adapter": "",
+        "busaddr": "",
+        "cycletime": "",
+        "timeout": 1500,
+        "name": "",
+        "vartable": [
+            {
+                "addr": "M2.0",
+                "name": "M2.0"
+            },
+            {
+                "addr": "M0.0",
+                "name": "Start_tri"
+            }
+        ]
+    },
+    {
+        "id": "onglet_tri",
+        "type": "ui_tab",
+        "name": "Tri de roues",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "groupe_visualisation",
+        "type": "ui_group",
+        "name": "Visualisation capteur",
+        "tab": "onglet_tri",
+        "order": 1,
+        "disp": true,
+        "width": "14",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "groupe_historique",
+        "type": "ui_group",
+        "name": "Historique et graphe",
+        "tab": "onglet_tri",
+        "order": 2,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "400ede8e55b86312",
+        "type": "inject",
+        "z": "551e486cf1cf5f1b",
+        "name": "données de test",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 220,
+        "y": 320,
+        "wires": [
+            [
+                "ee7daceb6a7f8c35"
+            ]
+        ]
+    },
+    {
+        "id": "ee7daceb6a7f8c35",
+        "type": "function",
+        "z": "551e486cf1cf5f1b",
+        "name": "Créer requête SQL",
+        "func": "const nb_roue = 12;\nconst Nbroue_vert = 6;\nconst heure = new Date().toISOString().slice(0, 19).replace('T', ' ');\n\nmsg.topic = `INSERT INTO roues (nb_roue, Nbroue_vert, heure) VALUES (${nb_roue}, ${Nbroue_vert}, '${heure}')`;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 320,
+        "wires": [
+            [
+                "562649e5dbba03ab"
+            ]
+        ]
+    },
+    {
+        "id": "562649e5dbba03ab",
+        "type": "mysql",
+        "z": "551e486cf1cf5f1b",
+        "mydb": "44a2063d10882cd0",
+        "name": "",
+        "x": 690,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "84bcebb7d5c3a122",
+        "type": "debug",
+        "z": "551e486cf1cf5f1b",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "32be5a9227fd6b7b",
+        "type": "mysql",
+        "z": "551e486cf1cf5f1b",
+        "mydb": "444f7f92a6177c67",
+        "name": "",
+        "x": 450,
+        "y": 400,
+        "wires": [
+            [
+                "84bcebb7d5c3a122"
+            ]
+        ]
+    },
+    {
+        "id": "0ce5df0db4b5ac02",
+        "type": "function",
+        "z": "551e486cf1cf5f1b",
+        "name": "function 1",
+        "func": "const nb_roue = 1;\nconst Nbroue_vert = msg.payload === true ? 1 : 0;\nconst heure = new Date().toISOString().slice(0, 19).replace('T', ' ');\n\nmsg.topic = `INSERT INTO roues (nb_roue, Nbroue_vert, heure) VALUES (${nb_roue}, ${Nbroue_vert}, '${heure}')`;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 400,
+        "wires": [
+            [
+                "32be5a9227fd6b7b"
+            ]
+        ]
+    },
+    {
+        "id": "capteur_input",
+        "type": "s7 in",
+        "z": "551e486cf1cf5f1b",
+        "endpoint": "6cbe9d40df30041a",
+        "mode": "single",
+        "variable": "capteur",
+        "diff": false,
+        "name": "capteur",
+        "x": 120,
+        "y": 540,
+        "wires": [
+            [
+                "prepare_data",
+                "0ce5df0db4b5ac02",
+                "collect_detect"
+            ]
+        ]
+    },
+    {
+        "id": "prepare_data",
+        "type": "function",
+        "z": "551e486cf1cf5f1b",
+        "name": "Préparer données dashboard",
+        "func": "let detection = msg.payload === true ? \"🟢 Roue détectée\" : \"🔴 Aucune roue\";\nlet voyant_tri = msg.tri_en_cours === true ? \"✅ Tri en cours\" : \"❌\";\nlet tri = msg.roue_triee === true ? \"✅ Triée\" : \"❌ Non triée\";\nlet heure = new Date().toLocaleTimeString();\nlet vitesse = msg.vitesse || 0;\n\n// Pour le tableau historique\nlet ligne = {\n  heure: heure,\n  detection: detection,\n  tri: tri\n};\n\n// Valeur pour le graphique (1 si roue détectée, 0 sinon)\nlet valeurGraph = msg.payload === true ? 1 : 0;\n\nreturn [\n  { payload: detection },     // Sortie 1 → Détection\n  { payload: tri },           // Sortie 2 → Triage\n  { payload: heure },         // Sortie 3 → Heure\n  { payload: vitesse },       // Sortie 4 → Vitesse moteur\n  { payload: [ligne] },       // Sortie 5 → Tableau historique\n  { payload: valeurGraph },    // ✅ Sortie 6 → Graphe\n  { payload: voyant_tri }    // Sortie 7 → LED Tri en cours\n];\n",
+        "outputs": 7,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 600,
+        "wires": [
+            [
+                "detection_text"
+            ],
+            [
+                "tri_text"
+            ],
+            [
+                "heure_text"
+            ],
+            [
+                "vitesse_gauge"
+            ],
+            [],
+            [],
+            [
+                "53089aed3d1539cb"
+            ]
+        ]
+    },
+    {
+        "id": "detection_text",
+        "type": "ui_text",
+        "z": "551e486cf1cf5f1b",
+        "group": "groupe_visualisation",
+        "width": "",
+        "height": "",
+        "name": "Detection",
+        "label": "Détection",
+        "format": "{{msg.payload}}",
+        "layout": "",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 650,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "tri_text",
+        "type": "ui_text",
+        "z": "551e486cf1cf5f1b",
+        "group": "groupe_visualisation",
+        "width": "",
+        "height": "",
+        "name": "Triage",
+        "label": "Statut de tri",
+        "format": "{{msg.payload}}",
+        "layout": "",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 680,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "heure_text",
+        "type": "ui_text",
+        "z": "551e486cf1cf5f1b",
+        "group": "groupe_visualisation",
+        "width": "",
+        "height": "",
+        "name": "Heure",
+        "label": "Heure",
+        "format": "{{msg.payload}}",
+        "layout": "",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 700,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "vitesse_gauge",
+        "type": "ui_gauge",
+        "z": "551e486cf1cf5f1b",
+        "name": "Vitesse moteur",
+        "group": "groupe_visualisation",
+        "width": "",
+        "height": "",
+        "gtype": "gage",
+        "title": "",
+        "label": "Vitesse moteur",
+        "format": "{{value}} %",
+        "min": 0,
+        "max": 100,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 690,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "start_button",
+        "type": "ui_button",
+        "z": "551e486cf1cf5f1b",
+        "name": "Démarrer le tri",
+        "group": "groupe_visualisation",
+        "order": 10,
+        "width": 6,
+        "height": 1,
+        "passthru": false,
+        "label": "🟢 Démarrer le tri",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "",
+        "topicType": "str",
+        "x": 910,
+        "y": 580,
+        "wires": [
+            [
+                "s7_write_start"
+            ]
+        ]
+    },
+    {
+        "id": "stop_button",
+        "type": "ui_button",
+        "z": "551e486cf1cf5f1b",
+        "name": "Arrêter le tri",
+        "group": "groupe_visualisation",
+        "order": 11,
+        "width": 6,
+        "height": 1,
+        "passthru": false,
+        "label": "🔴 Arrêter le tri",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "false",
+        "payloadType": "bool",
+        "topic": "",
+        "topicType": "str",
+        "x": 910,
+        "y": 620,
+        "wires": [
+            [
+                "s7_write_start"
+            ]
+        ]
+    },
+    {
+        "id": "s7_write_start",
+        "type": "s7 out",
+        "z": "551e486cf1cf5f1b",
+        "endpoint": "6cbe9d40df30041a",
+        "variable": "start_tri",
+        "name": "Écriture start tri",
+        "x": 1160,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "316d06c9b3ec2a2c",
+        "type": "s7 in",
+        "z": "551e486cf1cf5f1b",
+        "endpoint": "6cbe9d40df30041a",
+        "mode": "single",
+        "variable": "tri_en_cours",
+        "diff": true,
+        "name": "",
+        "x": 90,
+        "y": 620,
+        "wires": [
+            [
+                "prepare_data"
+            ]
+        ]
+    },
+    {
+        "id": "7a9f3492d30fddc9",
+        "type": "s7 in",
+        "z": "551e486cf1cf5f1b",
+        "endpoint": "6cbe9d40df30041a",
+        "mode": "single",
+        "variable": "roue_triee",
+        "diff": true,
+        "name": "",
+        "x": 100,
+        "y": 680,
+        "wires": [
+            [
+                "prepare_data"
+            ]
+        ]
+    },
+    {
+        "id": "53089aed3d1539cb",
+        "type": "ui_text",
+        "z": "551e486cf1cf5f1b",
+        "group": "",
+        "width": "",
+        "height": "",
+        "name": "tri_encours",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 690,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "collect_detect",
+        "type": "function",
+        "z": "551e486cf1cf5f1b",
+        "name": "Collecter 10 roues",
+        "func": "let detection = msg.payload === true ? \"🟢 Roue détectée\" : \"🔴 Aucune roue\";\nlet tri = msg.payload === true ? \"✅ Triée\" : \"❌ Non triée\";\nlet heure = new Date().toLocaleTimeString();\n\nlet ligne = {\n    heure: heure,\n    detection: detection,\n    tri: tri\n};\n\nlet historique = flow.get(\"historique\") || [];\n\nif (msg.payload === true) {\n    historique.push(ligne);\n}\n\nif (historique.length > 10) {\n    historique = historique.slice(historique.length - 10);\n}\n\nflow.set(\"historique\", historique);\n\nreturn { payload: historique };",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 880,
+        "wires": [
+            [
+                "table_data",
+                "c2b1cfddbdceec72"
+            ]
+        ]
+    },
+    {
+        "id": "table_data",
+        "type": "ui_table",
+        "z": "551e486cf1cf5f1b",
+        "group": "",
+        "name": "Historique 10 roues",
+        "width": "",
+        "height": "",
+        "columns": [
+            {
+                "field": "heure",
+                "title": "Heure",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "detection",
+                "title": "Détection",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "tri",
+                "title": "Tri",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 690,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "graph_data",
+        "type": "ui_chart",
+        "z": "551e486cf1cf5f1b",
+        "name": "Graphique 10 roues",
+        "group": "",
+        "width": "",
+        "height": "",
+        "label": "Historique (roue détectée)",
+        "chartType": "line",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "Aucune donnée",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "",
+        "removeOlderPoints": "",
+        "cutout": "",
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 700,
+        "y": 860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c2b1cfddbdceec72",
+        "type": "function",
+        "z": "551e486cf1cf5f1b",
+        "name": "function 5",
+        "func": "msg.payload = 1; // chaque détection de roue\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 900,
+        "wires": [
+            [
+                "graph_data"
+            ]
+        ]
+    },
+    {
+        "id": "8562aa36be19b1f7",
+        "type": "inject",
+        "z": "551e486cf1cf5f1b",
+        "name": "charger données",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 1000,
+        "wires": [
+            [
+                "4128d6ad3a99e9b1"
+            ]
+        ]
+    },
+    {
+        "id": "f89ab4b84936d546",
+        "type": "mysql",
+        "z": "551e486cf1cf5f1b",
+        "mydb": "444f7f92a6177c67",
+        "name": "",
+        "x": 470,
+        "y": 1000,
+        "wires": [
+            [
+                "287ba2616dce2879",
+                "9279ae606ce7f874"
+            ]
+        ]
+    },
+    {
+        "id": "4128d6ad3a99e9b1",
+        "type": "function",
+        "z": "551e486cf1cf5f1b",
+        "name": "function 2",
+        "func": "msg.topic = \"SELECT id, nb_roue, Nbroue_vert, heure  FROM roues ORDER BY id ASC LIMIT 20\";\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 1080,
+        "wires": [
+            [
+                "f89ab4b84936d546"
+            ]
+        ]
+    },
+    {
+        "id": "287ba2616dce2879",
+        "type": "ui_table",
+        "z": "551e486cf1cf5f1b",
+        "group": "d8aad10abd0fe0b7",
+        "name": "Base de données",
+        "order": 3,
+        "width": "13",
+        "height": "8",
+        "columns": [],
+        "outputs": 0,
+        "cts": false,
+        "x": 690,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "9279ae606ce7f874",
+        "type": "function",
+        "z": "551e486cf1cf5f1b",
+        "name": "format pour graphe",
+        "func": "let data = msg.payload.map(row => {\n  return {\n    x: row.heure,            // valeur brute MySQL (ISO 8601)\n    y: row.Nbroue_vert       // ou nb_roue si tu préfères\n  };\n});\n\nmsg.payload = [\n  {\n    series: [\"Roues\"],\n    data: [data],\n    labels: []\n  }\n];\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 1160,
+        "wires": [
+            [
+                "6f72ddf6d3b61e0d"
+            ]
+        ]
+    },
+    {
+        "id": "6f72ddf6d3b61e0d",
+        "type": "ui_chart",
+        "z": "551e486cf1cf5f1b",
+        "name": "Graphique 10 roues",
+        "group": "7cac9085f2249487",
+        "width": "",
+        "height": "",
+        "label": "Roues",
+        "chartType": "line",
+        "xformat": "auto",
+        "interpolate": "linear",
+        "nodata": "Aucune donnée",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "",
+        "removeOlderPoints": "",
+        "cutout": "",
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 580,
+        "y": 1320,
+        "wires": [
+            [
+                "64fbb378d159f46f"
+            ]
+        ]
+    },
+    {
+        "id": "64fbb378d159f46f",
+        "type": "debug",
+        "z": "551e486cf1cf5f1b",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 1420,
+        "wires": []
+    }
+]

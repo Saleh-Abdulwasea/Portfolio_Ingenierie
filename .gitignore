@@ -1,0 +1,33 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+# Python cache & virtualenvs
+__pycache__/
+*.py[cod]
+*$py.class
+*.env
+.venv/
+venv/
+
+# C / C++ / Embedded binaries
+*.o
+*.obj
+*.hex
+*.elf
+*.so
+*.dylib
+
+# TIA Portal temp & lock files
+*.lock
+*.bak
+
+# MATLAB / Simulink cache & autosave
+*.slxc
+*.asv
+*.m~
+slprj/
+*.mex*
+*.mat~
